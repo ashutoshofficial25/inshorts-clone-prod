@@ -41,10 +41,10 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
       </List>
       <List>
         {categories.map((text) => (
-          <ListItem key={text} disablePadding>
+          <ListItem key={text}>
             <ListItem>
               <ListItemButton>
-                <ListItemText onClick={() => setCategory(text)}>
+                <ListItemText onClick={() => setCategory(text.toLowerCase())}>
                   {text}
                 </ListItemText>
               </ListItemButton>

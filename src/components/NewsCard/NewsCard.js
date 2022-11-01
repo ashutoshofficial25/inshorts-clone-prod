@@ -20,10 +20,6 @@ const NewsCard = ({ newsItem }) => {
     "Friday",
     "Saturday",
   ];
-  let day = weekday[fulldate.getDay()];
-  let date = fulldate.toString().split(" ");
-  const hour = parseInt(date[4].substring(0, 2));
-  const time = hour > 12 ? true : false;
 
   return (
     <Card
@@ -32,10 +28,11 @@ const NewsCard = ({ newsItem }) => {
     >
       <CardMedia
         component="img"
-        sx={{ width: 300 }}
+        height="250"
+        width="300"
         image={
-          newsItem.urlToImage
-            ? newsItem.urlToImage
+          newsItem.imageUrl
+            ? newsItem.imageUrl
             : "https://images.pexels.com/photos/6335/man-coffee-cup-pen.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         }
         alt="news-img"
@@ -48,20 +45,16 @@ const NewsCard = ({ newsItem }) => {
               <b> short</b>
             </Link>
             by
-            {newsItem.author ? newsItem.author : "unknown"} /{" "}
-            {time
-              ? `${hour - 12}${date[4].substring(2, 5)} pm`
-              : `${hour}${date[4].substring(2, 5)} am`}{" "}
-            {day}
+            {newsItem.author ? newsItem.author : "unknown"} / {newsItem.date}
           </Box>
-          {newsItem.description}
+          {newsItem.content}
         </CardContent>
         <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
           <Typography>
             read more at{" "}
-            <Link sx={{ textDecoration: "none" }} href={newsItem.url}>
+            <Link sx={{ textDecoration: "none" }} href={newsItem.readMoreUrl}>
               {" "}
-              {newsItem.source.name}
+              {newsItem.author}
             </Link>
           </Typography>
         </Box>

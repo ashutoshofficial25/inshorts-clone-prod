@@ -7,7 +7,7 @@ const NewsContent = ({ newsArray = [], setLoadmore, loadmore }) => {
   return (
     <Container sx={{ padding: "3rem" }}>
       {newsArray.map((newsItem) => (
-        <NewsCard key={newsItem.title} newsItem={newsItem} />
+        <NewsCard key={newsItem.id} newsItem={newsItem} />
       ))}
 
       <div style={{ textAlign: "center", paddingTop: "2rem" }}>

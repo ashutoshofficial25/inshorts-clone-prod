@@ -44,8 +44,8 @@ const NewsCard = ({ newsItem }) => {
             <Link href={newsItem.url} target="_blank">
               <b> short</b>
             </Link>
-            by
-            {newsItem.author ? newsItem.author : "unknown"} / {newsItem.date}
+            by {"  "} {newsItem.author ? newsItem.author : "unknown"} /{" "}
+            {newsItem.date}
           </Box>
           {newsItem.content}
         </CardContent>

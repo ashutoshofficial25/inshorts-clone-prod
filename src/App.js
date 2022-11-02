@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavInshorts from "./components/NavInshorts";
-import NewsCard from "./components/NewsCard/NewsCard";
 import NewsContent from "./components/NewsContent/NewsContent";
 
 function App() {
@@ -12,7 +11,7 @@ function App() {
   const [loadmore, setLoadmore] = useState(15);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = "a17bc6ce27b243eb9ab7b70a6cfd0298";
+  // const API_KEY = "a17bc6ce27b243eb9ab7b70a6cfd0298";
 
   const newsApi = async () => {
     try {
@@ -37,7 +36,11 @@ function App() {
 
   return (
     <div>
-      <NavInshorts setCategory={setCategory} category={category} setLoading={setLoading} />
+      <NavInshorts
+        setCategory={setCategory}
+        category={category}
+        setLoading={setLoading}
+      />
       <NewsContent
         newsArray={newsArray}
         setLoadmore={setLoadmore}

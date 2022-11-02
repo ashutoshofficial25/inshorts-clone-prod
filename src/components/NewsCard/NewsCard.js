@@ -11,17 +11,6 @@ import React from "react";
 import "./NewsCard.css";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 const NewsCard = ({ newsItem }) => {
-  const fulldate = new Date(newsItem.publishedAt);
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
   return (
     <Card
       className="news-card"

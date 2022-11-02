@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   Typography,
 } from "@mui/material";
 import { SwipeableDrawer } from "@mui/material";
@@ -58,7 +57,7 @@ export default function SwipeableTemporaryDrawer({
         {categories.map((text) => (
           <ListItem
             key={text}
-            className={category == text.toLowerCase() ? "active-item" : ""}
+            className={category === text.toLowerCase() ? "active-item" : ""}
             sx={{
               cursor: "pointer",
               "&:hover": {

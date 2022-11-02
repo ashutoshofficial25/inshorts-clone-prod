@@ -7,12 +7,17 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import { SwipeableDrawer } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import categories from "../data/category";
 
-export default function SwipeableTemporaryDrawer({ setCategory, setLoading }) {
+export default function SwipeableTemporaryDrawer({
+  setCategory,
+  setLoading,
+  category,
+}) {
   const [state, setState] = useState({ left: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -33,27 +38,38 @@ export default function SwipeableTemporaryDrawer({ setCategory, setLoading }) {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        backgroundColor: "rgb(48 48 54)",
+        color: "#eee",
+        height: "100%",
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <ListItem>
-          <ListItemButton>Categories</ListItemButton>
+          <Typography color="#999999">Categories</Typography>
         </ListItem>
         <Divider />
       </List>
       <List>
         {categories.map((text) => (
-          <ListItem key={text}>
-            <ListItem>
-              <ListItemButton>
-                <ListItemText onClick={() => handleClick(text)}>
-                  {text}
-                </ListItemText>
-              </ListItemButton>
-            </ListItem>
+          <ListItem
+            key={text}
+            className={category == text.toLowerCase() ? "active-item" : ""}
+            sx={{
+              cursor: "pointer",
+              "&:hover": {
+                backgroundColor: "#999999",
+              },
+              marginBottom: "0px",
+            }}
+          >
+            <ListItemButton onClick={() => handleClick(text)}>
+              {text}
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
@@ -65,6 +81,7 @@ export default function SwipeableTemporaryDrawer({ setCategory, setLoading }) {
       <Button onClick={toggleDrawer("left", true)}>
         <MenuIcon fontSize="large" />
       </Button>
+      <Button>{category}</Button>
       <SwipeableDrawer
         anchor={"left"}
         open={state["left"]}

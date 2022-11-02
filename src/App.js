@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div>
-      <NavInshorts setCategory={setCategory} setLoading={setLoading} />
+      <NavInshorts setCategory={setCategory} category={category} setLoading={setLoading} />
       <NewsContent
         newsArray={newsArray}
         setLoadmore={setLoadmore}

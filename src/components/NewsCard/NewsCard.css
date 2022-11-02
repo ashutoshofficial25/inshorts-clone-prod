@@ -1,4 +1,12 @@
 .news-card {
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .news-card {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 600px) {

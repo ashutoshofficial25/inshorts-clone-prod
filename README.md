@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
-# See Live! =>
-[https://inshorts-news.netlify.app/](https://inshorts-news.netlify.app/) to view it in your browser.
+# See Live! .\
+Visit! [https://inshorts-news.netlify.app/](https://inshorts-news.netlify.app/) 
 
 ![alt text](https://github.com/ashutoshofficial25/portfolio/blob/master/src/assets/projects/inshots-news.png)
 

@@ -10,6 +10,7 @@ function App() {
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
   const [loadmore, setLoadmore] = useState(15);
+  const [loading, setLoading] = useState(true);
 
   const API_KEY = "a17bc6ce27b243eb9ab7b70a6cfd0298";
 
@@ -21,6 +22,9 @@ function App() {
       if (news) {
         setNewsArray(news?.data.data);
         setNewsResults(news?.data.data.length);
+        setLoading(false);
+      } else {
+        setLoading(true);
       }
     } catch (error) {
       console.log(error);
@@ -33,11 +37,12 @@ function App() {
 
   return (
     <div>
-      <NavInshorts setCategory={setCategory} />
+      <NavInshorts setCategory={setCategory} setLoading={setLoading} />
       <NewsContent
         newsArray={newsArray}
         setLoadmore={setLoadmore}
         loadmore={loadmore}
+        loading={loading}
       />
     </div>
   );

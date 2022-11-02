@@ -4,13 +4,14 @@ import HumburgerDrawer from "./HumburgerDrawer";
 import { Button } from "@mui/material";
 import logoInShorts from "../logo_inshorts.png";
 
-const NavInshorts = ({ setCategory }) => {
+const NavInshorts = ({ setCategory, setLoading }) => {
   return (
     <div className="nav">
       <div className="menu">
         <HumburgerDrawer
           className="humburgerDrawer"
           setCategory={setCategory}
+          setLoading={setLoading}
         />
 
         <img

@@ -12,7 +12,7 @@ import { SwipeableDrawer } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import categories from "../data/category";
 
-export default function SwipeableTemporaryDrawer({ setCategory }) {
+export default function SwipeableTemporaryDrawer({ setCategory, setLoading }) {
   const [state, setState] = useState({ left: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -24,6 +24,11 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
       return;
     }
     setState({ ...state, [anchor]: open });
+  };
+
+  const handleClick = (text) => {
+    setCategory(text.toLowerCase());
+    setLoading(true);
   };
 
   const list = (anchor) => (
@@ -44,7 +49,7 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
           <ListItem key={text}>
             <ListItem>
               <ListItemButton>
-                <ListItemText onClick={() => setCategory(text.toLowerCase())}>
+                <ListItemText onClick={() => handleClick(text)}>
                   {text}
                 </ListItemText>
               </ListItemButton>

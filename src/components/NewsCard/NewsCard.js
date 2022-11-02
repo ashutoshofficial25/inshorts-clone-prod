@@ -24,6 +24,7 @@ const NewsCard = ({ newsItem }) => {
 
   return (
     <Card
+      className="news-card"
       elevation={8}
       sx={{ display: "flex", marginBottom: "25px", padding: "10px" }}
     >

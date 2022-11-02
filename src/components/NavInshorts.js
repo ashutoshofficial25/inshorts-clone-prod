@@ -19,7 +19,7 @@ const NavInshorts = ({ setCategory }) => {
           alt="inshorts-logo"
           height="72px"
         />
-        <Button>Login/signup</Button>
+        <Button>😊</Button>
       </div>
     </div>
   );

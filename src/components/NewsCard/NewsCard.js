@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import "./NewsCard.css";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 const NewsCard = ({ newsItem }) => {
   const fulldate = new Date(newsItem.publishedAt);
   const weekday = [
@@ -40,23 +41,31 @@ const NewsCard = ({ newsItem }) => {
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardHeader title={newsItem.title} disableTypography={true} />
         <CardContent>
-          <Box className="author">
-            <Link href={newsItem.url} target="_blank">
-              <b> short</b>
+          <Box className="author" sx={{ pb: 1, color: "#999999" }}>
+            <Link
+              href={newsItem.url}
+              target="_blank"
+              sx={{ textDecoration: "none", color: "#001111", fontWeight: 700 }}
+            >
+              shorts {"  "}
             </Link>
             by {"  "} {newsItem.author ? newsItem.author : "unknown"} /{" "}
             {newsItem.date}
           </Box>
           {newsItem.content}
         </CardContent>
-        <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
-          <Typography>
-            read more at{" "}
-            <Link sx={{ textDecoration: "none" }} href={newsItem.readMoreUrl}>
-              {" "}
-              {newsItem.author}
-            </Link>
+        <Box sx={{ display: "flex", alignItems: "center", pl: 1 }}>
+          <Typography sx={{ color: "#001111", fontWeight: 600 }}>
+            read more...{" "}
           </Typography>
+          <Link
+            sx={{ textDecoration: "none", color: "#999999" }}
+            href={newsItem.readMoreUrl}
+            target="_blank"
+          >
+            {" "}
+            <ArrowCircleRightIcon />
+          </Link>
         </Box>
       </Box>
     </Card>

@@ -1,3 +1,18 @@
 .active-item {
   background-color: #9999;
 }
+
+@media only screen and (max-width: 600px) {
+  .nav-logo {
+    height: 50px;
+  }
+  .nav-toggle-btn {
+    display: flex;
+    justify-content: center;
+    margin-left: -15px;
+  }
+  .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    font-size: 12px !important;
+    padding: 1px 2px !important;
+  }
+}

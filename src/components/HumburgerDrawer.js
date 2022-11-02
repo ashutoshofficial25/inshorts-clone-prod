@@ -78,10 +78,12 @@ export default function SwipeableTemporaryDrawer({
 
   return (
     <div>
-      <Button onClick={toggleDrawer("left", true)}>
-        <MenuIcon fontSize="large" />
-      </Button>
-      <Button>{category}</Button>
+      <div className="nav-toggle-btn">
+        <Button onClick={toggleDrawer("left", true)}>
+          <MenuIcon fontSize="large" />
+        </Button>
+        <Button>{category}</Button>
+      </div>
       <SwipeableDrawer
         anchor={"left"}
         open={state["left"]}

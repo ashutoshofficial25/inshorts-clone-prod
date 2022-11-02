@@ -16,6 +16,7 @@ const NavInshorts = ({ setCategory, setLoading, category }) => {
         />
 
         <img
+          className="nav-logo"
           src={logoInShorts}
           style={{ cursor: "pointer" }}
           alt="inshorts-logo"
